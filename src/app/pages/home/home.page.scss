@@ -1,0 +1,50 @@
+
+
+
+ion-title {
+  text-align: center !important;
+}
+
+.upload {
+  margin-bottom: 20px; 
+  
+  --background: #e39b15;
+
+}
+
+.orange-button{
+  --color: #e39b15;
+}
+
+
+
+ion-icon{
+  position: initial;
+}
+
+
+ion-item {
+  --background:#ddb365;
+}
+
+
+
+ion-content {
+  --ion-background-color: #ffffff;
+}
+
+ion-header {
+  --ion-background-color: #ffffff; 
+} 
+
+ion-footer {
+  --ion-background-color: #ffffff; 
+} 
+
+ion-item span{
+  display: flex;
+  flex-direction: column;
+}
+.arrow{
+  color: rgb(254, 212, 0);
+}

@@ -1,0 +1,679 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title
+      ><b
+        >How to walk with a VIP (Basic non-verbal and verbal cues)</b
+      ></ion-title
+    >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="container">
+    <h2>Progress</h2>
+    <div class="progress">
+      <ion-progress-bar
+        [value]="updateProgress() / 100"
+        color="primary"
+        type="determinate"
+      >
+        {{ updateProgress() }}%
+      </ion-progress-bar>
+    </div>
+    <br />
+    <div *ngIf="currentIndex === 0" class="mt-4">
+      <h5><b>2.1 If they have a guide dog:</b></h5>
+      <ul>
+        <li>
+          they will probably prefer if you simply open the door for them and
+          rejoin them on the other side.
+        </li>
+        <li>
+          It's best to avoid revolving doors, however o If there is no
+          alternative, position yourself so the person you’re guiding is on the
+          widest part and guide them out at the end.
+        </li>
+      </ul>
+
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[0])"
+        [disabled]="topics[0].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 1" class="mt-4">
+      <h5><b>2.2 Navigate steps, staircases and slopes.</b></h5>
+      <div class="img-container">
+        <img
+          src="../../../assets/stairs.png"
+          alt="volunteer guiding through stairs"
+        />
+      </div>
+
+      <p>
+        Steps and staircases can be somewhat difficult to navigate. You must
+        take safety precautions to avoid accidents or injuries
+      </p>
+      <ul>
+        <li>
+          First, verbally inform the VIP when stairs are coming up. Tell them
+          whether the stairs go up or down.
+        </li>
+        <li>
+          Ask the VIP whether they prefer to keep their hand on the handrail or
+          if they wish to keep in touch with your elbow. If they prefer to go by
+          themselves help them to find the handrail by placing your guiding hand
+          on it.
+        </li>
+      </ul>
+      <p>
+        Most of the time, VIP is perfectly capable of walking by themselves.
+        However, there are times when a sighted guide is required. If you need
+        to guide a VIP somewhere, there are some basic techniques you should
+        follow. <br /><br />
+        While we predominantly use our sight to orient and navigate our
+        environment, VIP’s cannot. They use their senses with assistance such
+        as:
+      </p>
+      <ul>
+        <li>
+          a cane stick (the typical white for blind or red and white stick for
+          deaf- blind) to perceive the nearby environment through “touch”.
+        </li>
+        <li>a guide dog.</li>
+        <li>or the assistance of a person.</li>
+      </ul>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[1])"
+        [disabled]="topics[1].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 2" class="mt-4">
+      <h5><b>2.3 Important things to keep in mind before meeting a VIP.</b></h5>
+      <div class="two-img">
+        <img src="../../../assets/greet VIP.png" alt="Greet VIP" />
+        <img src="../../../assets/Do not touch.png" alt="Do not touch VIP" />
+      </div>
+      <p>
+        Never approach a VIP by touching them to make them aware that you are
+        there. Instead, ask the VIP if they would like you to be on your left or
+        right side?
+      </p>
+      <ul>
+        <li>
+          Being touched in a public area can be scary, especially if there is
+          some noise around. Initiate the conversation by greeting them by their
+          name and Secret CodeTH - not by touching them.
+          <ul>
+            <li>Greet them using their name.</li>
+            <li>
+              Introduce yourself - no matter how well you think they know your
+              voice.
+            </li>
+            <li>
+              If there is someone else other than the two of you, say the name
+              of the person who you are addressing at the beginning of the
+              conversation so that they know you are speaking to them
+              personally.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Ask them
+          <ul>
+            <li>How would you like me to help you/guide you?</li>
+            <li>Would you like to take my arm?</li>
+            <li>Would you like me to go on your left or right side?</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        NEVER take their arm without permission as this would reduce their
+        independence and would prevent them from being able to stop if they
+        wish. <br /><br />It’s good practice to:
+      </p>
+      <ul>
+        <li>Match your pace to the person you are guiding.</li>
+        <li>Give verbal instructions when necessary but don’t overdo it.</li>
+        <li>Always speak politely - try to avoid commanding instructions.</li>
+        <li>
+          Pay attention to any possible hazard at the ground level and head
+          height.
+        </li>
+        <li>Say when you are about to leave a conversation or a room.</li>
+        <li>
+          Trying not to use your phone unless necessary. You are the eyes for a
+          VIP on the busy suburban roads.
+        </li>
+      </ul>
+      <p>
+        <b>Guiding someone with a guide dog</b> <br />Always approach a VIP with
+        a guide dog from the opposite side to the dog. It is also important not
+        to take hold of the dog’s harness or lead - even though you’re guiding
+        someone they will still be using the dog. Some people also prefer for
+        you to walk alongside them without holding your arm or walking in front
+        with the dog following you. <br /><br />There is also advice on how to
+        guide someone with a guide dog under each section in this booklet.
+      </p>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[2])"
+        [disabled]="topics[2].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 3" class="mt-4">
+      <h5><b>2.4 Standard position to walk with a VIP</b></h5>
+      <div class="two-img">
+        <img src="../../../assets/hold elbow.png" alt="Hold above hte elbow" />
+        <img src="../../../assets/do not cross.png" alt="Do not link arms" />
+      </div>
+      <p>
+        Always make sure the VIP is holding your arm just above your elbow.
+        Never link arms with the VIP. <br /><br />In addition to the use of
+        their cane, a VIP will be able to better sense changes in the pathways
+        by:
+      </p>
+      <ul>
+        <li>Gently grabbing the back of one of your elbows</li>
+        <li>or putting their hand onto one of your shoulders.</li>
+      </ul>
+      <p>
+        Doing so will enable them to follow your body movements and will provide
+        them non-verbal feedback to understand directional changes or obstacles
+        on the way such as steps, inclined paths per time. However, they might
+        get distracted so it’s important to always verbally anticipate and
+        describe any upcoming obstacle on your way.
+      </p>
+      <p><b>1. Have the VIP hold your arm just above the elbow.</b></p>
+      <div class="two-img">
+        <img
+          src="../../../assets/arm degree.png"
+          alt="Keep arm at 90 degrees"
+        />
+        <img
+          src="../../../assets/Do not straight arm.png"
+          alt="Do not straight arm"
+        />
+      </div>
+      <p>
+        When walking with a VIP make sure to have your elbow bent at 90 degree.
+        Never have your arm straight when walking with a VIP. <br /><br />To
+        start walking with a VIP, place the back of your hand on the back of the
+        VIP's hand. This will let him or her figure out where your arm is. Then,
+        the VIP can hold your arm just above the elbow. Remember to always keep
+        the arm the VIP is holding to bent at a 90 degrees angle.
+      </p>
+      <p><b>2. Make sure the VIP is ½ step or 1 step behind you.</b></p>
+      <div class="three-img">
+        <img src="../../../assets/step distance.png" alt="1/2 to 1 Step" />
+        <img
+          src="../../../assets/step too close.png"
+          alt="Do not keep too close"
+        />
+        <img src="../../../assets/step too far.png" alt="Do not keep too far" />
+      </div>
+      <br />
+      <p>
+        Make sure you are ½ to 1 step in front of the VIP. Never be more than 1
+        step away or less than ½ a step from the VIP. <br /><br />To respond to
+        the environment per time some time is needed for us to decide how to
+        react, the same applies to VIPs, the only difference is that not all of
+        them will be able to see it. That is why it is important for you to be
+        one step or half-step in front of them, to signal what’s coming their
+        way. <br /><br />The VIP should also be slightly to your left or right
+        side. VIPs may feel more comfortable walking at a slower pace than we
+        are used to. So, ask the VIP if they want to walk faster or slower. Keep
+        up a pace you are both comfortable with.
+      </p>
+      <ul>
+        <li>
+          Look out for obstacles. This includes obstacles on the ground, to the
+          side, and anything head height. Instruct the VIP to move over or duck
+          when necessary.
+        </li>
+        <li>Always leave enough room to walk around obstacles.</li>
+        <li>
+          If any obstacle arises at the head height just let the VIP know when
+          to duck it and when the obstacle has ended.
+        </li>
+      </ul>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[3])"
+        [disabled]="topics[3].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 4" class="mt-4">
+      <h5><b>2.5 How to adjust when encountering narrow spaces</b></h5>
+      <div class="img-container">
+        <img
+          src="../../../assets/narrow space.png"
+          alt="Guiding through narrow space"
+        />
+      </div>
+      <br />
+      <p>
+        If the path is too narrow to walk normally with the VIP, move your arm
+        behind you and let the VIP know that they need to walk in a single file.
+        <br /><br />In the event you have to walk through a narrow space, like a
+        small hallway or a crowd of people:
+      </p>
+      <ul>
+        <li>
+          alert the VIP that a narrow space is coming up
+          <ul>
+            <li>Verbally announcing it.</li>
+            <li>
+              and, in case they are holding to the back of your elbow, by
+              lowering your arm.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        In addition to this, you will have to adjust how you're walking when you
+        encounter narrow spaces.
+      </p>
+      <ul>
+        <li>
+          Move your guiding arm behind your back as the VIP should still keep
+          his or her hand on your arm (just above the elbow).
+        </li>
+        <li>Have the person step behind you to walk in a single file.</li>
+        <li>
+          In case of need, instruct the VIP how to move (e.g. obstacles at head
+          height, steps, kerbs…)
+        </li>
+        <li>
+          Always let the VIP know when the narrow space is ended by bringing
+          your arm back to your side.
+        </li>
+      </ul>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[4])"
+        [disabled]="topics[4].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 5" class="mt-4">
+      <h5><b>2.6 Let the VIP know if you need to switch sides.</b></h5>
+
+      <div class="two-img">
+        <img
+          src="../../../assets/Near doors.png"
+          alt="VIP opposite of hinged side"
+        />
+        <img src="../../../assets/VIP near door.png" alt="VIP on hinged side" />
+      </div>
+      <p>
+        When walking through a gate makes sure the VIP is on the hinged side of
+        the door by switching sides with them.
+
+        <br />
+        <br />
+
+        In some scenarios, you may have to switch sides when guiding a VIP. For
+        example, you may encounter an obstacle in your path while walking.
+      </p>
+      <ul>
+        <li>
+          Tell the VIP that you need to switch sides. Have him or her pause
+          while walking as it's much easier to switch sides when you are both
+          stationary.
+        </li>
+      </ul>
+      <p>Before moving forward,</p>
+      <ul>
+        <li>
+          make sure the VIP is holding one of your arms just above the elbow.
+        </li>
+        <li>
+          Make sure they are a half step to a step behind you, a little to your
+          side.
+        </li>
+      </ul>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[5])"
+        [disabled]="topics[5].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 6" class="mt-4">
+      <h5><b>2.7 Navigating special circumstances.</b></h5>
+      <div class="img-container">
+        <img
+          src="../../../assets/Near rood side.png"
+          alt="Make aware of speeding cars"
+        />
+      </div>
+
+      <p>
+        Make sure to be aware of speeding cars. Immediately make the VIP aware
+        of the car by saying “stop!”
+
+        <br />
+        <br />
+
+        When walking with a VIP, you may encounter a dangerous situation. There
+        may be a speeding car or a loose dog.
+        <br />
+        <br />
+        <b>In such situations, remember:</b>
+      </p>
+      <ul>
+        <li>the blind person cannot see the threat.</li>
+        <li>
+          Do not simply move him or her out of the way. Use your words to say
+          something like, "Stop!" or "Move!"
+        </li>
+        <li>After you've got the VIP out of harm's way, explain the threat.</li>
+      </ul>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[6])"
+        [disabled]="topics[6].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 7" class="mt-4">
+      <h5><b>2.8 Move through doors.</b></h5>
+      <div class="img-container">
+        <img
+          src="../../../assets/through doors.png"
+          alt="Be infront while moving through doors"
+        />
+      </div>
+      <p>
+        Make sure the VIP is on the hinged side of the gate/door when moving
+        through. If the path is too narrow you may need to walk through the
+        gate/door in a single file.
+        <br />
+        <br />
+        When guiding a VIP through a door, make sure to take special precautions
+        to ensure everything goes smoothly.
+      </p>
+      <ul>
+        <li>
+          Make sure the VIP is on the hinged side of the door. If you need to
+          change sides, do so following the instructions listed above.
+        </li>
+        <li>
+          Explain which way the door opens as you near the door. Open the door
+          and proceed to walk through with the VIP you are guiding. If needed,
+          have the VIP close the door behind them when you both passed through.
+        </li>
+        <li>
+          Get to the edge of the stairs. Allow the VIP to let you know when they
+          are ready to proceed. As they may want a moment to adjust themselves
+          before proceeding up or down the staircase.
+        </li>
+        <li>
+          Walk up or down the staircase, remaining one step ahead of the blind
+          person.
+        </li>
+        <li>Go slowly.</li>
+        <li>
+          When you reach the top or bottom of the stairs, let the VIP know it’s
+          the last step.
+        </li>
+      </ul>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[7])"
+        [disabled]="topics[7].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 8" class="mt-4">
+      <h5><b>2.9 Use caution near kerbs and roads.</b></h5>
+
+      <p>
+        Kerbs and roads are very dangerous, even with a guide. When approaching
+        a kerb or road let the person know by saying “kerb up” or a “kerb down”.
+        Slow down considerably so that the person can feel the movement through
+        your arm.
+      </p>
+      <ul>
+        <li>
+          Cross the street at the narrowest point, go straight across, rather
+          than at an angle.
+        </li>
+        <li>Warn the person about kerbs by saying "kerb up" or "kerb down."</li>
+        <li>Approach a kerb together.</li>
+      </ul>
+      <span> Note: The next content is not in the video</span>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[8])"
+        [disabled]="topics[8].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 9" class="mt-4">
+      <h5><b>2.10 Help with seating.</b></h5>
+
+      <p>
+        In addition to walking, you may need to help a VIP sit down. Tell them:
+      </p>
+      <ul>
+        <li>
+          What type of seat it is, (whether it has arms rests, how high it is
+          and if it has wheels)?
+        </li>
+        <li>which way the chair is facing.</li>
+        <li>Walk up to the chair and place your guiding arm on the chair.</li>
+        <li>Let the VIP know which part of the chair you are touching.</li>
+        <li>If the chair is under a table, let them know this.</li>
+        <li>
+          If the chair has wheels, then hold the chair whilst they sit on it.
+        </li>
+      </ul>
+
+      <p>
+        Let the VIP move his or her arm down yours, feel the chair, and figure
+        out how to sit down from there. <br /><br />
+        It is always important to always guide people into their seats and not
+        back them into it.
+      </p>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[9])"
+        [disabled]="topics[9].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 10" class="mt-4">
+      <h5><b>2.11 Guide a blind person into a car.</b></h5>
+
+      <p>
+        If you lead a VIP to their car, offer to help him or her into the car.
+        Make sure you ask if they need assistance before helping.
+      </p>
+      <ul>
+        <li>
+          Let them know which way the car is facing and which door you're
+          opening. (E.g. "The car is facing forward and I'm bringing you into
+          the passenger's seat.”)
+        </li>
+        <li>Take your guiding hand and place it on the door handle.</li>
+        <li>Instruct the VIP to feel down your hand to find the handle.</li>
+        <li>
+          From here, you can usually let them get in the car on their own.
+        </li>
+      </ul>
+
+      <p>
+        However, if it's an unfamiliar car you should place your arm inside the
+        car on the roof. This can help the VIP feel how big the car is, avoiding
+        bumping his or her head. Once they are safely seated, let them close the
+        door.
+        <br />
+        <br />
+        When helping them to get out of the car you should open the door for
+        them and let them know if there is a gap between the car and the kerb.
+      </p>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[10])"
+        [disabled]="topics[10].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 11" class="mt-4">
+      <h5><b>2.12 Buses, coaches and trains.</b></h5>
+
+      <p>
+        All of these can vary in design a lot so there are no hard rules. The
+        basic principles of the other sections can be used in this situation.
+      </p>
+      <ul>
+        <li>
+          Let the person know what kind of gap there is between them and the
+          vehicle.
+        </li>
+        <li>
+          Lead them in a single file on and off and through trains (see Single
+          Step section).
+        </li>
+      </ul>
+
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[11])"
+        [disabled]="topics[11].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 12" class="mt-4">
+      <h5><b>2.13 Escalators and travelators.</b></h5>
+
+      <p>
+        Let the VIP know if you are approaching an escalator, lift or travelator
+        and ask them if they are happy to use it. Many people may prefer to
+        avoid them, so it’s good to offer an alternative route. If nothing is
+        available, you can request the escalator to be turned off.
+      </p>
+      <ul>
+        <li>
+          If the VIP has a guide dog, find an alternative route to escalators.
+          Never try to carry a guide dog on an escalator.
+        </li>
+        <li>
+          In London, not all underground areas are accessible for people with
+          guide dogs, if you find yourself in this situation ask a member of TfL
+          staff for the most appropriate route.
+        </li>
+      </ul>
+      <br />
+      <p>
+        Not all guide dogs are trained to use escalators so ask if you need to
+        find an alternative route. Never try to carry a guide dog on an
+        escalator.
+        <br /><br />
+        If you are in London, not all areas of the Underground network are
+        accessible for people with guide dogs. You can guide the person to a
+        member of staff who will know the most appropriate route.
+      </p>
+
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[12])"
+        [disabled]="topics[12].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 13" class="mt-4">
+      <h5><b>2.14 Lifts</b></h5>
+
+      <p>
+        Let the person you are walking with decide whether you’re going up or
+        down.
+      </p>
+
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[13])"
+        [disabled]="topics[13].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 14" class="mt-4">
+      <h5><b>2.15 Turnstiles and ticket barriers</b></h5>
+      <div class="img-container">
+        <img
+          src="../../../assets/near ticket barrier.png"
+          alt="Tell VIP you are approaching turnstile or ticket barriers"
+        />
+      </div>
+      <p>
+        Tell the VIP you are approaching a turnstile or a ticket barrier and
+        move to walk on a single file as described in the previous section,
+        “Single Step”. If the turnstile is high this is not possible. But you
+        can help by describing how to navigate it and talk them through what
+        they need to do.
+        <br />
+        <br />
+        If you are using an automatic ticket barrier the person you are guiding
+        should go first.
+      </p>
+      <ul>
+        <li>Guide them in front of the barrier.</li>
+        <li>Place their ticket on the machine.</li>
+        <li>Take it out while they go through the barrier.</li>
+        <li>You can join them afterwards.</li>
+      </ul>
+
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[14])"
+        [disabled]="topics[14].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+
+    <div *ngIf="updateProgress() === 100" class="success-message mt-4">
+      <h5>Congratulations!</h5>
+      <p>You have completed all topics successfully.</p>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button
+      shape="round"
+      expand="block"
+      class="next-button"
+      routerLink="/module3"
+      [disabled]="updateProgress() !== 100"
+      [ngClass]="{ disabled: updateProgress() !== 100 }"
+      >{{ updateProgress() !== 100 ? "Progress incomplete" : "Next"
+      }}</ion-button
+    >
+  </ion-toolbar>
+</ion-footer>

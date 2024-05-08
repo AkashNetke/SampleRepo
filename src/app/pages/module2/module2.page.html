@@ -1,0 +1,283 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title><b>Introduction and General Tips</b></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <h2>Progress</h2>
+    <div class="progress">
+      <!-- <div
+        class="progress-bar"
+        role="progressbar"
+        [style.width.%]="updateProgress()"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        {{ updateProgress() }}%
+      </div> -->
+      <ion-progress-bar
+        [value]="updateProgress() / 100"
+        color="primary"
+        type="determinate"
+      >
+        {{ updateProgress() }}%
+      </ion-progress-bar>
+    </div>
+    <br />
+    <div *ngIf="currentIndex === 0" class="mt-4">
+      <h5>
+        <b
+          >What can you expect from the volunteering experience with Travel
+          Hands?</b
+        >
+      </h5>
+      <ul>
+        <li>
+          Guide blind or partially sighted people or Visually Impaired People
+          (VIP) as per your flexibility.
+        </li>
+        <li>Increase your physical activity by walking more.</li>
+        <li>Make new friends, have fun, and enjoy meaningful conversations.</li>
+        <li>
+          Personal growth while learning about new things, cultures, different
+          backgrounds and different mindsets.
+        </li>
+        <li>
+          Boost self-confidence and professional growth practicing interpersonal
+          communication skills.
+        </li>
+        <li>Become more empathetic.</li>
+        <li>
+          Learn more about yourself (how do you react to new experiences, new
+          people, etc...)
+        </li>
+        <li>
+          By completing journeys, you will unlock perks such as free hot drinks
+          or discount coupons from our affiliated partners.
+        </li>
+      </ul>
+      <h6>
+        <span>IF YOU HAVE ANY DOUBT PLEASE DON’T HESITATE TO CONTACT US.</span>
+      </h6>
+      <p>
+        <b>Mail</b>: <a> volunteer&commat;vipworldservices.com</a> <br />
+        <b>Phone number</b> : +44 2039661650
+      </p>
+
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[0])"
+        [disabled]="topics[0].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 1" class="mt-4">
+      <h5><b>What are the boundaries of the volunteering activities?</b></h5>
+
+      <ul>
+        <li>
+          <b>Don’t feel pressured</b> to do anything more than walking with the
+          VIP or performing the activity that was requested through us.
+        </li>
+        <li>
+          In the event a VIP requests anything other than what was previously
+          agreed when you accepted the journey, please <b>report it to us.</b>
+        </li>
+        <li>Only meet in <b>public spaces.</b></li>
+      </ul>
+
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[1])"
+        [disabled]="topics[1].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 2" class="mt-4">
+      <h5><b>General Tips</b></h5>
+      <ul>
+        <li>
+          Always ask the VIP how they prefer to be guided. We will teach you the
+          best practice, however it is good practice to adapt according to VIP’s
+          preferences and your level of comfort.
+        </li>
+        <li>
+          Charge your phone before you leave so that you can share your GPS
+          location during the journey and communicate with us if necessary.
+        </li>
+        <li>
+          It is important to remember that guide dogs are working animals. You
+          should ask the owner of a guide dog before you touch their dog, so you
+          do not distract them.
+        </li>
+        <li>Be on time (if possible, arrive 5 minutes early)</li>
+        <li>Update your availability during the week for accurate matches</li>
+        <li>Check notifications through our communication channel</li>
+        <li>
+          To protect against COVID-19, wear a mask. This is a legal requirement
+          when inside buildings and on public transport.
+        </li>
+        <li>Use the suggested route recommended by us.</li>
+        <li>
+          Inform us if you face any misconduct, emergencies or requests out of
+          the service.
+        </li>
+        <li>In case you are late, inform us as soon as possible.</li>
+      </ul>
+
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[2])"
+        [disabled]="topics[2].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 3" class="mt-4">
+      <h5><b>Do not</b></h5>
+      <ul>
+        <li>Go to private spaces such as house premises of the VIP.</li>
+        <li>
+          Grab, push or pull a VIP unless a situation of unexpected danger
+          arises which requires you to have direct physical contact to save them
+          and yourself.
+        </li>
+        <li>Grab their cane. That is what they use to sense their path.</li>
+        <li>Use cash machines on behalf of the VIP.</li>
+        <li>
+          Read personal details such as home address or phone number out loud if
+          the VIP requests you to read a document.
+        </li>
+        <li>
+          Touch or physically embrace VIP in case they look emotional or
+          vulnerable - not everyone would appreciate and can be considered as a
+          form of harassment.
+        </li>
+      </ul>
+
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[3])"
+        [disabled]="topics[3].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 4" class="mt-4">
+      <h5><b>Do not be overprotective.</b></h5>
+      <ul>
+        <li>
+          Many VIPs have been dealing with their disability for a long time.
+          While it is important you let them know of an oncoming vehicle or a
+          low-hanging tree branch, try not to be overly protective. Only advise
+          a VIP to move or duck when it's necessary.
+        </li>
+      </ul>
+      <span>
+        *Note* Overprotection of the person with a visual impairment can cause
+        lowered self-esteem that may result in a feeling of underachievement.
+      </span>
+      <br />
+
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[4])"
+        [disabled]="topics[4].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 5" class="mt-4">
+      <h5><b>Describe the passing scene.</b></h5>
+
+      <div class="img-container">
+        <img
+          src="../../../assets/volunteer.png"
+          alt="image of VIP and volunteer over a bridge"
+        />
+      </div>
+      <p>
+        Just as you might enjoy the scenery when you walk, many VIPs enjoy
+        having scenes described to them. While you are walking, it can be nice
+        to tell them about anything noticeable or interesting that you see.
+        <br />
+        <br />
+
+        However, use discretion. Some people may prefer to walk in silence or
+        may find excessive chatter distracting. It's a good idea to ask first
+        before you describe the scene.
+      </p>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[5])"
+        [disabled]="topics[5].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 6" class="mt-4">
+      <h5><b>Give directions verbally.</b></h5>
+
+      <p>
+        Many people use non-verbal cues, like pointing, when giving directions.
+        You may do this without even thinking when giving directions to VIPs.
+        However, try to remember you need to give out specific verbal directions
+        for a VIP to understand.
+        <br />
+        <br />
+
+        (E.g., "You walk three blocks forward on this street and then take a
+        left." Do not point forward and say, "It's three blocks that way.")
+      </p>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[6])"
+        [disabled]="topics[6].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+    <div *ngIf="currentIndex === 7" class="mt-4">
+      <h5><b>Relax.</b></h5>
+
+      <p>
+        Don't be embarrassed if you use common expressions such as “See you
+        later” or “Did you watch the movie this weekend?”. VIPs use the same
+        expressions as those who are sighted.
+      </p>
+      <ion-button
+        shape="round"
+        (click)="completeTopic(topics[7])"
+        [disabled]="topics[7].completed"
+        (click)="goToNextSection()"
+        >Mark as completed</ion-button
+      >
+    </div>
+  </div>
+  <div *ngIf="updateProgress() === 100" class="success-message mt-4">
+    <h5>Congratulations!</h5>
+    <p>You have completed all topics successfully.</p>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button
+      shape="round"
+      expand="block"
+      class="next-button"
+      routerLink="/module3"
+      [disabled]="updateProgress() !== 100"
+      [ngClass]="{ disabled: updateProgress() !== 100 }"
+      >{{ updateProgress() !== 100 ? "Progress incomplete" : "Next"
+      }}</ion-button
+    >
+  </ion-toolbar>
+</ion-footer>
